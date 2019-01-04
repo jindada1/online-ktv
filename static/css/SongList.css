@@ -1,0 +1,295 @@
+.list_itemblock,
+.list_songname,
+.list_album,
+.list_singers,
+.list_time {
+    float: left;
+    line-height: 50px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.list_itemblock {
+    width: 5%;
+}
+
+.list_songname {
+    position: relative;
+    width: 40%
+}
+
+.list_songnametext {
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.list_album {
+    width: 27%;
+}
+
+.list_singers {
+    width: 18%;
+}
+
+.list_time {
+    width: 10%;
+}
+
+.result-container{
+    min-width: 840px;
+    width:80%;
+    margin-left: 10%;
+}
+
+.listview {
+    width: 100%;
+    display: block;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.Listview_item {
+    overflow: hidden;
+}
+
+.Listview_item:hover {
+    background: rgba(210, 210, 210, 1);
+}
+
+.Listview_item__hover .hovershow {
+    right: 0;
+    opacity: 1;
+    pointer-events: inherit;
+    background: rgba(210, 210, 210, 1);
+}
+
+.Listview_item__hover .list_songnametext {
+    max-width: 100% - 150px;
+}
+
+.hovershow {
+    opacity: 0;
+    font-size: 24px;
+    color: white;
+    padding-right: 20px;
+    padding-top: 3px;
+    position: absolute;
+}
+
+.listhead{
+    color: gray;
+    width: 100%;
+    margin: auto;
+}
+
+.button_icon{
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.button_icon:hover{
+    cursor: pointer;
+}
+
+.like_button_icon {
+    background: url("/static/images/icons/like.png");
+}
+
+.like_button_icon:hover {
+    background: url("/static/images/icons/like-hover.png");
+}
+
+.play_button_icon {
+    background: url("/static/images/icons/play-button.png");
+}
+
+.play_button_icon:hover {
+    background: url("/static/images/icons/play-button-hover.png");
+}
+
+.dislike_button_icon {
+    background: url("/static/images/icons/delete.png");
+}
+
+.dislike_button_icon:hover {
+    background: url("/static/images/icons/delete-hover.png");
+}
+
+.download_button_icon {
+    background: url("/static/images/icons/download.png");
+}
+
+.download_button_icon:hover {
+    background: url("/static/images/icons/download-hover.png");
+}
+
+.video_button_icon {
+    margin-top: 13px;
+    background: url("/static/images/icons/video-button.png");
+}
+
+.video_button_icon:hover {
+    background: url("/static/images/icons/video-button-hover.png");
+}
+
+.foot_panel{
+    padding: 20px 0;
+    width:60%;
+    margin-left: 20%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.button_icon_32{
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.last_button_icon {
+    float: left;
+    background: url("/static/images/icons/last.png");
+}
+
+.last_button_icon:hover {
+    background: url("/static/images/icons/last-hover.png");
+}
+
+.next_button_icon {
+    float: right;
+    background: url("/static/images/icons/next.png");
+}
+
+.next_button_icon:hover {
+    background: url("/static/images/icons/next-hover.png");
+}
+
+
+.search-box{
+    overflow: hidden;
+    border-radius: 20px;
+    background: white;
+    width: fit-content;
+    height: 33px;
+    transition: width .6s ease-out,visibility .6s 1ms ease-out;
+}
+
+.search-box:hover {
+    border-radius: 2px;
+}
+
+.search-box-input[type=text] {
+    padding: 6px 0px;
+    font-size: 17px;
+    border: none;
+    margin-left: 10px;
+    width: 0px;
+    transition: width .6s ease-out,visibility .6s 1ms ease-out;
+}
+
+.search-box:hover .search-box-input[type=text]{
+	width: 200px;
+}
+
+.search-button {
+    padding: 5px 10px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    background: white;
+}
+
+.search-button:hover{
+    background-color: gold;
+}
+
+.search-box-input[type=text]:focus, button:focus{
+    outline: 0;
+}
+
+.center-profile{
+    width: 160px;
+    height: 100%;
+    position: absolute;
+    right: 10%;
+    top: 0px;
+    background-color: white;
+    text-align: center;
+    opacity: 0;
+}
+
+.singer-profile-holder{
+    opacity: 0;
+    top: 0;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#singer-name{
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.circle-profile{
+    border-radius: 50%!important;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.circle-img{
+    border-radius: 50%!important;
+    width: 80%;
+}
+
+.asyn-btn{
+    padding: 5px 10px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    background: whitesmoke;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.asyn-btn:hover{
+    color: white;
+    background-color: green;
+}
+
+.mid-container{
+    width: fit-content;
+    opacity: 0;
+    margin: auto;
+}
+
+.asyn-more-btn{
+    padding: 5px 10px;
+    font-size: 17px;
+    border-width: 2px;
+    cursor: pointer;
+    background: whitesmoke;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-color: blueviolet;
+    border-style: solid;
+}
+
+.asyn-more-btn:hover{
+    color: white;
+    background-color: blueviolet;
+}

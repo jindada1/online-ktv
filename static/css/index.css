@@ -1,0 +1,45 @@
+.banner {
+    margin: auto;
+    background-color: whitesmoke;
+    padding: 0 60px;
+    overflow: hidden;
+    height: 360px;
+    min-width: 960px;
+}
+
+.song-item{
+    height: 100px;
+    width: 30%;
+    background-color: white;
+    margin: 10px 1.5%;
+    display: inline-block;
+    position: relative;
+}
+
+.song-item:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rect-img{
+    height: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+.info{
+    height: 100px;
+    position:absolute;
+    right: 50px;
+    left: 100px;
+}      
+
+.info a{
+    display: block;
+    padding: 20px 0 0 10px;
+}
+
+.time-string{
+    float: right;
+    color:gray;
+    padding: 44px 10px;
+}

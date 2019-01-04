@@ -1,0 +1,15 @@
+
+
+.login-content .login-bg {
+    width: 100%; 
+    background: url(../images/images/load_bg.jpg) no-repeat; 
+    background-size: cover;
+}
+
+.hjr-login-form{
+    margin-top: 30%;
+}
+
+.hjr-sign-up{
+    width: 100%;
+}
