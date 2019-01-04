@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ room_name }}</title>
+    <link rel="shortcut icon" href="/static/images/icons/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="author" type="text/html" href="https://plus.google.com/+MuazKhan">
+    <meta name="author" content="Muaz Khan">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+
+    <link rel="stylesheet" type="text/css" href="/static/css/4.1.3/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/Room.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row upbar">
+            <div id="player">
+                <audio id="audio">!audio not supported :(</audio>
+                <audio id="backaudio">!audio not supported :(</audio>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-outline-dark">🎵 已点歌曲</button>
+                <div class="dropdown-content" id="songs-ordered-holder"></div>
+            </div>
+            <div class="buttons-container">
+                <button onclick="playToggle()" class="btn btn-outline-primary">播放/暂停</button>
+                <button onclick="switchNext()" class="btn btn-outline-primary">切歌</button>
+                <button id="switch-accompany-btn" class="btn btn-outline-primary">伴奏/原唱</button>
+                <button class="btn btn-outline-info" onclick="ChangeVideo()">切换</button>
+                <div class="overlay" id="overlayblock">
+                    <div>
+                        <p>房间里正在播放音乐，请查看周围环境决定是否播放</p>
+                        <button onclick="initPlay()" type="button" class="btn" style="margin:auto;display:block">Play</button>
+                    </div>
+                </div>
+            </div>
+            <div class="search-area">
+                <div class="search-box">
+                    <input id="searchinput" class="search-box-input" type="text" placeholder="Search.." name="search">
+                    <button class="search-button" onclick="DoMySearch()"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="search-result">
+                    <ul id="SearchResultList" class="result-list">
+
+                    </ul>
+                </div>
+            </div>
+            <div style="width:0;height:0;overflow:hidden;">
+                <h1>已点歌曲</h1>
+                <div id="holder" class="message_holder"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg" style="text-align:-webkit-center">
+                <div id="big-screen-container" class="screen-container">
+                    <video id="mv-video" class="video-player"></video>
+                </div>
+                <div id="lyricWrapper">
+                    <div id="lyricContainer">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div id="small-screen-container" class="small-screen-container screen-container">
+                    <video id="human-video" controls class="video-player"></video>
+                </div>
+                <div class="message-box">
+                    <div class="msg-container" id="message-box"></div>
+                </div>
+                <div class="input-group mb-3">
+                    <input id="content-input" type="text" class="form-control" placeholder="msg" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-info" type="button" id="send-bullet">发送</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var RID = {{room_id }};
+        var ROOM_ID = RID.toString();
+        var status = 1;
+        dom_list = ["human-video", "mv-video"];
+
+        function ChangeVideo() {
+            var mv = document.getElementById(dom_list[status]);
+            var human = document.getElementById(dom_list[1 - status]);
+            var smallcontainer = document.getElementById("small-screen-container");
+            var bigcontainer = document.getElementById("big-screen-container");
+            bigcontainer.insertBefore(human, bigcontainer.firstChild);
+            smallcontainer.appendChild(mv);
+            status = 1 - status;
+        }
+    </script>
+
+    <script src="/static/plugins/jquery.min.js"></script>
+    <script src="/static/plugins/socket.io.js"></script>
+
+    <script src="/static/js/DataFactory.js"></script>
+    <script src="/static/js/KTV/ClientUIMV.js"></script>
+    <script src="/static/js/KTV/MVPlayer.js"></script>
+    <script src="/static/js/KTV/MVSocketioClient.js"></script>
+
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="https://cdn.webrtc-experiment.com/socket.io.js"></script>
+    <script src="https://cdn.webrtc-experiment.com/RTCPeerConnection-v1.5.js"></script>
+    <script src="/static/js/KTV/my-broadcast.js"></script>
+    <script src="/static/js/KTV/my-broadcast-ui.js"></script>
+</body>
+
+</html>

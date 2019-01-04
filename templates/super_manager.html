@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Super Manager</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="user-scalable=no">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1">
+
+</head>
+
+<body>
+    <div>
+        <button id="query-info-btn">查询整体状态</button>
+    </div>
+    <div>
+        <button id="reload-room-btn">重载房间</button>
+    </div>
+    <div>
+        <input id="reset-room-input" placeholder="房间id或all"></input>
+        <button id="reset-room-btn">重置房间</button>
+    </div>
+
+    <div>
+        <input id="rename-roomname-input" placeholder="房间id"></input>
+        <input id="rename-roomid-input" placeholder="房间新名字"></input>
+        <button id="rename-room-btn">重命名房间</button>
+    </div>
+
+    <div>
+        <input id="create-roomname-input" placeholder="房间名字"></input>
+        <button id="create-room-btn">创建房间</button>
+    </div>
+
+    <!-- Demo 逻辑文件 -->
+    <script src="../static/plugins/socket.io.js"></script>
+    <script src="../static/js/SuperManager.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="../static/images/icons/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/layui.css">
+    <script type="text/javascript" src="../static/js/layui/layui.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="../static/plugins/jquery.min.js"></script>
+    <link href="../static/css/SongList.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="site-nav-bg">
+        <div class="site-nav w1200">
+            <p class="sn-back-home">
+                <i class="layui-icon layui-icon-home"></i>
+                <a href="/" class="active">首页</a>
+            </p>
+            <div class="sn-quick-menu">
+                <div class="login"><a id="login-or-userpage" href="/LR.html">登录</a></div>
+                <div class="sp-cart"><a id="log-out-btn">退出登录</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="headerLayout w1200">
+            <div class="headerCon">
+                <h1 class="mallLogo">
+                    <a href="/" title="音乐平台">
+                        <p>音乐平台</p>
+                    </a>
+                </h1>
+                <div class="mallSearch">
+                    <form action="/portal/SearchResult" class="layui-form" novalidate>
+                        <input type="text" name="search" required lay-verify="required" autocomplete="off" class="layui-input" placeholder="请输入想听的音乐">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">
+                            <i class="layui-icon layui-icon-search"><a href="SearchResult"></a></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content content-nav-base shopcart-content">
+        <div class="banner-bg w1200">
+            <h3 id="user-name"> 的歌单</h3>
+            <div class="search-box">
+                <button id="bind-btn" class="search-button">绑定QQ</button>
+                <input id="bind-input" class="search-box-input" type="text" placeholder="QQ号" name="search">
+            </div>
+            <div id="QQ-info-box" class="center-profile">
+                <img id="qq-profile" src="" class="circle-img" alt="">
+                <button id="qq-name" class="asyn-btn"></button>
+            </div>
+        </div>
+
+        <div class="result-container">
+            <div class="listhead">
+                <div class="list_itemblock"></div>
+                <div class="list_songname">歌曲</div>
+                <div class="list_album">专辑</div>
+                <div class="list_singers">歌手</div>
+                <div class="list_time">时长</div>
+            </div>
+            <div class="listview">
+                <ul style="list-style-type:none; padding-inline-start: 0;" id="listContainer">
+                </ul>
+            </div>
+            <div class="mid-container" id="asyn-more-container">
+                <button class="asyn-more-btn" id="asyn-more-btn">同步更多</button>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="../static/js/LocalStorage/SendPlayer.js"></script>
+    <script src="../static/js/DataFactory.js"></script>
+    <script src="../static/js/UserPage.js"></script>-->
+</body>
+
+</html>
